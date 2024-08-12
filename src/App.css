@@ -36,3 +36,72 @@
     transform: rotate(360deg);
   }
 }
+
+.top,
+.bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 50%;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.grid {
+  display: grid;
+  height: 75%;
+  grid-template-columns: 40% 60%;
+}
+
+.showcaseGrid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, 49%);
+  text-align: left;
+  padding-left: 50px;
+  column-gap: 1%;
+}
+
+/* .showcaseItem {
+  margin-right: 20px;
+} */
+
+.infoCard,
+.showcaseItem {
+  min-width: 95%;
+  padding: 2%;
+  border: solid rgb(169, 171, 175) 2px;
+  background-color: #282c34;
+  border-radius: 3px;
+}
+
+.infoGrid {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, 24%);
+  grid-template-rows: repeat(auto-fit, 49%);
+  column-gap: 0.5%;
+  row-gap: 2%;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: darkorange;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: yellow;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
