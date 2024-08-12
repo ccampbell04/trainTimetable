@@ -42,7 +42,7 @@ function App() {
 
   const API_GLC_URL = `https://api1.raildata.org.uk/1010-live-departure-board-dep/LDBWS/api/20220120/GetDepBoardWithDetails/${stationDetails.topStation.stationCode}?timeOffset=${stationDetails.topStation.timeOffset}`;
   const API_GLQ_URL = `https://api1.raildata.org.uk/1010-live-departure-board-dep/LDBWS/api/20220120/GetDepBoardWithDetails/${stationDetails.bottomStation.stationCode}?timeOffset=${stationDetails.bottomStation.timeOffset}`;
-  const CONSUMER_KEY = process.env.REACT_APP_API_KEY;
+  const CONSUMER_KEY = process.env.REACT_APP_API_KEY || "defaultApiKey";
 
   function fetchPageData() {
     fetch(API_GLC_URL, {
