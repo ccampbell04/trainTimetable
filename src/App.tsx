@@ -44,7 +44,7 @@ function App() {
   const API_GLQ_URL = `https://api1.raildata.org.uk/1010-live-departure-board-dep/LDBWS/api/20220120/GetDepBoardWithDetails/${stationDetails.bottomStation.stationCode}?timeOffset=${stationDetails.bottomStation.timeOffset}`;
   const CONSUMER_KEY = "PmpQmXOVguMaXaeEYCmQb713rMvBAjVyqREX5G09ET2Jz9WA";
 
-  console.log(process.env.API_KEY)
+  console.log(process.env.REACT_APP_API_KEY)
 
   function fetchPageData() {
     fetch(API_GLC_URL, {
