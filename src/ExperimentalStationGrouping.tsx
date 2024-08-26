@@ -18,7 +18,7 @@ export function ExperimentalStationGrouping({
 
     let headerText = stationName;
     if (stationData.error) {
-      headerText = headerText + " - Error fetching data (Data may be inaccurate)";
+      headerText = headerText + " - Failed to load latest departure information";
     }
 
     return (
