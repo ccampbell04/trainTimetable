@@ -1,17 +1,21 @@
 # TrainTimeTable
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-* Planned migration to NextJS due to react-scripts vulnerabilities
+
+- Planned migration to NextJS due to react-scripts vulnerabilities
 
 This app makes use of the [Rail Data Marketplace - Live Departure Board](https://raildata.org.uk/dashboard/dataProduct/P-9a01dd96-7211-4912-bcbb-c1b5d2e35609/overview). This allows the app to receive the next 10 departures from both Glasgow Central and Glasgow Queen Street, the two main Glasgow commuter stations.
 
+The timetable can be found [here](https://glasgow-train-timetable.vercel.app)
+
 It states:
+
 - The departure time
 - If the train is late
 - Which platform it is departing from
 - For the two soonest departures, all of the subsequent stops
 
-![Alt text](<assets/trainTimetable.png>)
+![Alt text](assets/trainTimetable.png)
 
 ### Future Development Items
 
