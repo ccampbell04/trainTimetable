@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { ExperimentalStationGrouping } from "./ExperimentalStationGrouping";
+import { Analytics } from "@vercel/analytics/react";
 
 function formatTrainServices(trainServices: any) {
   return trainServices.map((service: any) => {
@@ -13,21 +14,22 @@ function formatTrainServices(trainServices: any) {
     const std = service.std;
     const etd = service.etd;
     const platform = service.platform;
-    const subsequentCallingPoints = service.subsequentCallingPoints[0].callingPoint
-      .map((callingPoint: any) => {
-        if (!callingPoint.isCancelled) {
-          return callingPoint.locationName;
-        }
-        return undefined;
-      })
-      .filter((callingPoint: any) => callingPoint !== undefined);
+    const subsequentCallingPoints =
+      service.subsequentCallingPoints[0].callingPoint
+        .map((callingPoint: any) => {
+          if (!callingPoint.isCancelled) {
+            return callingPoint.locationName;
+          }
+          return undefined;
+        })
+        .filter((callingPoint: any) => callingPoint !== undefined);
 
     return {
       destination,
       std,
       etd,
       platform,
-      subsequentCallingPoints
+      subsequentCallingPoints,
     };
   });
 }
@@ -37,7 +39,7 @@ function App() {
   const [bottomRailData, setBottomRailData] = useState<Record<string, any>>();
   const [stationDetails, setStationDetails] = useState({
     topStation: { stationCode: "GLC", timeOffset: "5" },
-    bottomStation: { stationCode: "GLQ", timeOffset: "12" }
+    bottomStation: { stationCode: "GLQ", timeOffset: "12" },
   });
 
   const API_GLC_URL = `https://api1.raildata.org.uk/1010-live-departure-board-dep/LDBWS/api/20220120/GetDepBoardWithDetails/${stationDetails.topStation.stationCode}?timeOffset=${stationDetails.topStation.timeOffset}`;
@@ -48,12 +50,15 @@ function App() {
     fetch(API_GLC_URL, {
       method: "GET",
       headers: {
-        "x-apikey": CONSUMER_KEY
-      }
+        "x-apikey": CONSUMER_KEY,
+      },
     })
       .then((response) => response.json())
       .then((data) =>
-        setTopRailData({ services: formatTrainServices(data.trainServices), error: false })
+        setTopRailData({
+          services: formatTrainServices(data.trainServices),
+          error: false,
+        })
       )
       .catch(() =>
         setTopRailData((prevRailData) => {
@@ -64,12 +69,15 @@ function App() {
     fetch(API_GLQ_URL, {
       method: "GET",
       headers: {
-        "x-apikey": CONSUMER_KEY
-      }
+        "x-apikey": CONSUMER_KEY,
+      },
     })
       .then((response) => response.json())
       .then((data) =>
-        setBottomRailData({ services: formatTrainServices(data.trainServices), error: false })
+        setBottomRailData({
+          services: formatTrainServices(data.trainServices),
+          error: false,
+        })
       )
       .catch(() =>
         setBottomRailData((prevRailData) => {
@@ -90,8 +98,12 @@ function App() {
   return (
     <>
       <div className="App">
+        <Analytics />
         <div className="top">
-          <ExperimentalStationGrouping stationData={topRailData} stationName="Glasgow Central" />
+          <ExperimentalStationGrouping
+            stationData={topRailData}
+            stationName="Glasgow Central"
+          />
         </div>
         <div className="bottom">
           <ExperimentalStationGrouping
