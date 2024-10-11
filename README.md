@@ -11,7 +11,7 @@ It states:
 - Which platform it is departing from
 - For the two soonest departures, all of the subsequent stops
 
-![Alt text](<README_assets/trainTimetable.png>)
+![Alt text](<assets/trainTimetable.png>)
 
 ### Future Development Items
 
