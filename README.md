@@ -17,6 +17,13 @@ It states:
 
 ![Alt text](assets/trainTimetable.png)
 
+### Personal Use
+
+If you wish to use this app with different train stations -
+- Find the station codes from [here](http://www.railwaycodes.org.uk/stations/station1.shtm)
+- Update the station code(s) in the stationCodes state variable
+- Change the station names passed to the timetable components to your chosen station
+  
 ### Future Development Items
 
 - Migrate to NextJS app router
