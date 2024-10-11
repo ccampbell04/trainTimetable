@@ -9,7 +9,7 @@ This app makes use of the [Rail Data Marketplace - Live Departure Board](https:/
 
 It is states the departure time, if the train is late, which platform it is departing from, and for the two soonest departures, all of the subsequent stops
 
-![Alt text](<trainTimetable.png>)
+![Alt text](<README_assets/trainTimetable.png>)
 
 ## Available Scripts
 
