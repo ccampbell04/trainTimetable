@@ -1,15 +1,22 @@
-# Getting Started with Create React App
+# TrainTimeTable
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-*Planned migration to NextJS due to react-scripts vulnerabilities*
+* Planned migration to NextJS due to react-scripts vulnerabilities
 
-## App details
+This app makes use of the [Rail Data Marketplace - Live Departure Board](https://raildata.org.uk/dashboard/dataProduct/P-9a01dd96-7211-4912-bcbb-c1b5d2e35609/overview). This allows the app to receive the next 10 departures from both Glasgow Central and Glasgow Queen Street, the two main Glasgow commuter stations.
 
-This app makes use of the [Rail Data Marketplace - Live Departure Board](https://raildata.org.uk/dashboard/dataProduct/P-9a01dd96-7211-4912-bcbb-c1b5d2e35609/overview). This allows the app to recieve the next 10 departures from both Glasgow Central, and Glasgow Queen Street, the two main Glasgow commuter stations.
-
-It is states the departure time, if the train is late, which platform it is departing from, and for the two soonest departures, all of the subsequent stops
+It states:
+- The departure time
+- If the train is late
+- Which platform it is departing from
+- For the two soonest departures, all of the subsequent stops
 
 ![Alt text](<README_assets/trainTimetable.png>)
+
+### Future Development Items
+
+- Migrate to NextJS app router
+- Use NextJS API route to make API calls rather than the pages themselves
 
 ## Available Scripts
 
